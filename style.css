@@ -1,0 +1,339 @@
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+	background-color: darkgrey;
+	outline: 1px solid slategrey;
+	border-radius: 10px;
+}
+
+#Banner{
+	font-family: Open Sans;
+	font-size: 80px;
+	background-color: FFF6FA;
+	width: 100%;
+	height: 110px;
+	text-align: center;
+	color: FE5496;
+	overflow: hidden;
+	transition-property: background-color, color, height; 
+	transition-duration: 500ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms, 200ms;
+}
+
+#Banner:active{
+	height: 150px;
+	background-color:FE5496;
+	color: FFF6FA;
+}
+
+#developedby{
+	font-family: Arial;
+	font-size: 20px;
+	padding-bottom: 5px;
+	color: FFF6FA;
+}
+
+#statbar{
+	padding-top: 5px;
+}
+
+#hungerbar{
+	padding-top: 10px; 
+	float:left;
+	width: 33.33%;
+	height: 100px;
+	background-color: FF81B2;
+	overflow: hidden;
+	transition-property: height; 
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms, 90ms;
+}
+
+#hungerbar:hover{
+	height: 100%;
+}
+
+#cookbutton{
+	float: left;
+	width: 100%;
+	height: 100px;
+}
+
+#eatbutton{
+	float: left;
+	width: 100%;
+	height: 100px;
+}
+
+#hungername{
+	color: FFF6FA;
+	padding-top: 20px;	
+	text-align: center;
+	font-family: Arial; 	
+	font-weight: Bold;
+	font-size: 50px;
+}
+
+#hunger{
+	background-color: FE5496;
+	color: FFF6FA;
+	border: none;
+	text-align: center;
+	font-size: 90px;
+	font-family: Century Gothic;
+	height: 100px;
+}
+
+#cookrec{
+	width: 25%;
+	height: 100px;
+	float: left;
+}
+
+#cookrec:disabled{
+	background-color: FFF6FA;
+	border-color: FE5496;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  height: 100px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  color: FF81B2;
+  background-color: FE5496;
+  text-decoration: none;
+  display: block;
+  height: 100px;
+  width: 100px;
+  float: left;
+  overflow: absolute;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {background-color: #FFF6FA;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #FE5496;}
+
+#cookbutton{
+	width: 25%;
+	font-size: 20px;
+	font-family: Arial;
+	background-color: FF81B2;
+	color: FFF6FA;
+}
+
+#cookbutton:hover{
+	background-color: FFF6FA;
+	color: FE5496;
+}
+
+@keyframes cookdown{
+	from {background-color: FE5496;}
+	to {background-color: FFF6FA;}
+}
+
+#cookbutton:disabled{
+	background-color: FE5496;
+	animation-name: cookdown;
+	animation-duration: 5s;
+}
+
+#cookres{
+	width: 100%;
+	height: 50px;
+	border-color: FE5496;
+	background-color: FFF6FA;
+}
+
+#energybar{
+	padding-top: 10px;
+	float: left;
+	width: 33.33%;
+	height: 100px;
+	background-color: FF81B2;	
+	overflow: hidden;
+	transition-property: height; 
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms, 90ms;
+}
+
+#energybar:hover{
+	height: 100%;
+}
+
+#sleepbutton{
+	width: 100%;
+	font-size: 80px;
+	font-family: Arial;
+	background-color: FF81B2;
+	color: FFF6FA;
+}
+
+#sleepbutton:hover{
+	background-color: FFF6FA;
+	color: FE5496;
+}
+
+#energyname{
+	color: FFF6FA;
+	padding-top: 20px;	
+	text-align: center;
+	font-family: Arial; 	
+	font-weight: Bold;
+	font-size: 50px;
+}
+
+#energy{
+	background-color: FE5496;
+	color: FFF6FA;
+	border: none;
+	text-align: center;
+	font-size: 90px;
+	font-family: Century Gothic;
+	height: 100px;
+}
+
+#happinessbar{
+	padding-top: 10px;
+	float: left;
+	width: 33.33%;
+	height: 100px;
+	background-color: FF81B2;	
+	overflow: hidden;
+	transition-property: height; 
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms, 90ms;
+}
+
+#happinessbar:hover{
+	height: 100%;
+}
+
+#playbutton{
+	float: left;
+	width: 100%;
+	height: 100px;
+}
+
+#happinessname{
+	color: FFF6FA;
+	padding-top: 20px;	
+	text-align: center;
+	font-family: Arial; 	
+	font-weight: Bold;
+	font-size: 50px;
+}
+
+#happiness{
+	background-color: FE5496;
+	color: FFF6FA;
+	border: none;
+	text-align: center;
+	font-size: 90px;
+	font-family: Century Gothic;
+	height: 100px;
+}
+
+#moneybar{
+	float: left;
+	width: 100%;
+	height: 100px;
+	background-color: FF81B2;
+	overflow: hidden;
+	transition-property: height; 
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms, 90ms;
+}
+
+#moneybar:hover{
+	height: 400px;
+}
+
+#moneyname{
+	color: FFF6FA;
+	padding-top: 20px;	
+	text-align: center;
+	font-family: Arial; 	
+	font-weight: Bold;
+	font-size: 50px;
+}
+
+#money{
+	background-color: FE5496;
+	color: FFF6FA;
+	border: none;
+	text-align: center;
+	font-size: 90px;
+	font-family: Century Gothic;
+	height: 100px;
+}
+
+#workbutton{
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	color: FE5496;
+	font-size: 100px;
+	transition-property: background-color; 
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms, 90ms;
+}
+
+#workbutton:hover{
+	background-color: FFF6FA;
+}
+
+@keyframes workdown{
+	from {background-color: FE5496;}
+	to {background-color: FFF6FA;}
+}
+
+#workbutton:disabled{
+	background-color: FF81B2;
+	animation-name: workdown;
+	animation-duration: 5s;
+	transition-property: background-color; 
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms, 90ms;
+}

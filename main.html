@@ -1,0 +1,208 @@
+<html>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="icon" href="favicon.ico"/>
+<audio id="soundtrack" src="Soundtrack.mp3"> </audio>
+<audio id="typing" src="typing.mp3"></audio>
+
+<div id="Banner">
+Lootbox Simulator
+<div id="developedby">
+a game on lootboxes
+</div>
+</div>
+
+<div id=statbar>
+
+<div id="moneybar">
+
+	<div id="moneyname">
+		Money
+	</div>
+
+	<br>
+
+	<div id="money">
+
+	</div>
+	
+	<button id="workbutton" href=# onclick='workfunc()'>
+		Work
+	</button>
+
+</div>
+
+<div id="hungerbar">
+
+	<div id="hungername">
+	
+		Hunger
+	
+	</div>
+	
+	<br>
+	
+	<div id="hunger">
+	
+	</div>
+	
+	<div class="dropdown" id="cookrec">
+	  <button class="dropbtn">Dropdown</button>
+	  <div class="dropdown-content">
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+	  </div>
+	</div>
+
+	<div class="dropdown" id="cookrec">
+	  <button class="dropbtn">Dropdown</button>
+	  <div class="dropdown-content">
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+	  </div>
+	</div>
+
+	<div class="dropdown" id="cookrec">
+	  <button class="dropbtn">Dropdown</button>
+	  <div class="dropdown-content">
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred">Ingredient</button>
+	  </div>
+	</div>
+	
+	<button id="cookbutton" href=# onclick='cookfunc()'>
+		Cook
+	</button>
+	<input id="cookres" disabled>
+	<button id="eatbutton" href=# onclick='eatfunc()'>
+		Eat
+	</button>
+
+</div>
+
+<div id="energybar">
+
+	<div id="energyname">
+	
+		Energy
+	
+	</div>
+	
+	<br>
+
+	<div id="energy">
+	</div>
+
+	<button id="sleepbutton" href=# onclick='sleepfunc()'>
+		Sleep
+	</button>
+	
+</div>
+
+<div id="happinessbar">
+
+	<div id="happinessname">
+	
+		Happiness
+	
+	</div>
+
+	<br>
+
+	<div id="happiness">
+	
+	</div>
+	
+	<button id="playbutton" href=# onclick='workfunc()' disabled>
+		Play
+	</button>
+	
+</div>
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+</html>
+
+
+
+<script>
+document.title = "Lootbox Simulator";
+var money = 2500;
+var happiness = 100;
+var hunger = 100;
+var energy = 100;
+var dailywage = 256;
+var daylength = 24;
+var waketime = 8;
+var playenergy = 10;
+var workenergy = 10;
+var worktimeout = 5; //in seconds
+var workhunger = 20;
+var workhappiness = 10;
+const typing = document.getElementById('typing');
+document.getElementById('soundtrack').loop = true;
+var soundtrack = document.getElementById('soundtrack');
+
+refresh();
+	
+	
+	
+
+
+function refresh(){
+	document.getElementById('happiness').innerHTML = happiness;
+	document.getElementById('money').innerHTML = money + " PHP";
+	document.getElementById('hunger').innerHTML = hunger;
+	document.getElementById('energy').innerHTML = energy;
+	
+}
+
+
+function workfunc(){
+
+	money = money + dailywage;
+	document.getElementById('workbutton').disabled = true;
+	typing.play();
+	setTimeout(
+		function(){
+		document.getElementById('workbutton').disabled = false;
+		typing.pause()
+	}, worktimeout * 1000);
+	hunger = hunger - workhunger
+	energy = energy - workenergy;
+	happiness = happiness - workhappiness;
+	refresh();
+	
+}
+
+function cookfunc(){
+	document.getElementById('cookbutton').disabled = true
+	setTimeout(
+		function(){
+		document.getElementById('cookbutton').disabled = false;
+	}, worktimeout * 1000);
+	refresh();
+	
+}
+
+</script>
