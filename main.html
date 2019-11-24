@@ -1,9 +1,13 @@
 <html>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 <link rel="icon" href="favicon.ico"/>
-<audio id="soundtrack" src="Soundtrack.mp3"> </audio>
-<audio id="typing" src="typing.mp3"></audio>
 
+<audio id="soundtrack" src="audio/Soundtrack.mp3"> </audio>
+<audio id="cooking" src="audio/cooking.mp3"> </audio>
+<audio id="eating" src="audio/eating.mp3"> </audio>
+<audio id="typing" src="audio/typing.mp3"></audio>
+<audio id="snoring" src="audio/snoring.mp3"></audio>
+<audio id="buttonpress" src="audio/button.mp3"></audio>
 <div id="Banner">
 Lootbox Simulator
 <div id="developedby">
@@ -46,45 +50,81 @@ a game on lootboxes
 	</div>
 	
 	<div class="dropdown" id="cookrec">
-	  <button class="dropbtn">Dropdown</button>
-	  <div class="dropdown-content">
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
+	  <img class="dropbtn" disabled=true id='inginput1'>
+	  <div class="dropdown-content" >
+	  
+			<button href="#" id="cookingred" onclick='addmeat1()'>
+			
+				<img src='Ingredients/meat.png' style='width: 100%; height: 50%;'> 
+			
+			</button>
+			
+			<button href="#" id="cookingred" onclick='addveggie1()'>
+			
+				<img src='Ingredients/veggie.png' style='width: 100%; height: 50%;'>
+				
+			</button>
+			
+			<button href="#" id="cookingred" onclick='addfish1()'>
+			
+				<img src='Ingredients/fish.png' style='width: 100%; height: 50%;'>
+			
+			</button>
 	  </div>
 	</div>
 
 	<div class="dropdown" id="cookrec">
-	  <button class="dropbtn">Dropdown</button>
+	  <img class="dropbtn" id='inginput2' disabled=true>
 	  <div class="dropdown-content">
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
+			<button href="#" id="cookingred" onclick='addmeat2()'>
+			
+				<img src='Ingredients/meat.png' style='width: 100%; height: 50%;'> 
+				
+			</button>
+			
+			<button href="#" id="cookingred" onclick='addveggie2()'>
+			
+				<img src='Ingredients/veggie.png' style='width: 100%; height: 50%;'>
+				
+			</button>
+			
+			<button href="#" id="cookingred" onclick='addfish2()'>
+			
+				<img src='Ingredients/fish.png' style='width: 100%; height: 50%;'>
+			
+			</button>
+
 	  </div>
 	</div>
 
 	<div class="dropdown" id="cookrec">
-	  <button class="dropbtn">Dropdown</button>
+	  <img class="dropbtn" id='inginput3' disabled=true>
 	  <div class="dropdown-content">
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
-		<button href="#" id="cookingred">Ingredient</button>
+		<button href="#" id="cookingred" onclick='addmeat3()'>
+		
+			<img src='Ingredients/meat.png' style='width: 100%; height: 50%;'> 
+		
+		</button>
+		
+		<button href="#" id="cookingred" onclick='addveggie3()'>
+		
+			<img src='Ingredients/veggie.png' style='width: 100%; height: 50%;'>
+		
+		</button>
+		<button href="#" id="cookingred" onclick='addfish3()'>
+		
+			<img src='Ingredients/fish.png' style='width: 100%; height: 50%;'>
+		
+		</button>
+
 	  </div>
 	</div>
 	
 	<button id="cookbutton" href=# onclick='cookfunc()'>
 		Cook
 	</button>
-	<input id="cookres" disabled>
+	<div id="cookres"> 
+	</div>
 	<button id="eatbutton" href=# onclick='eatfunc()'>
 		Eat
 	</button>
@@ -109,6 +149,9 @@ a game on lootboxes
 	</button>
 	
 </div>
+</div>
+
+
 
 <div id="happinessbar">
 
@@ -123,86 +166,59 @@ a game on lootboxes
 	<div id="happiness">
 	
 	</div>
+	<div id="player">
+	<div id="gameheader">PLAY RPS</div>
 	
-	<button id="playbutton" href=# onclick='workfunc()' disabled>
-		Play
-	</button>
 	
+		<div id="gamebar">
+				<div id="gameresult"> 
+				
+				</div>
+				<button id="rock" onclick='rock()'>Rock</button>
+				<button id="paper" onclick='paper()'>Paper</button>
+				<button id="scissors" onclick='scissors()'>Scissors</button>
+				<div id="botplay" input disabled>
+				</div>
+		</div>
+		
+		<div id="lootbox">
+				<div id="creditcount"></div>
+				<button id="buycred1" onclick='buy100cred()'>Buy 100 Credits!<br>100 PHP</button>
+				<button id="buycred2" onclick='buy500cred()'>Buy 500 Credits!<br>450 PHP</button>
+				<button id="buycred3" onclick='buy1000()'>Buy 1000 Credits!<br>800 PHP</button>
+				
+				<button id="boxbutton" onclick='buybox()'>Buy Game Box</button>
+				<button id="keybutton"onclick='buykey()'>Buy Game Box Key</button>
+				<div id="boxno" disabled></div>
+				<div id="keyno" disabled></div>
+				<button id="openbutton">Open Lootbox </button>
+		</div>
+		<div id="bjcount" disabled></div>
+		<div id="bbcount" disabled></div>
+		<div id="hcount" disabled></div>
+	</div>
 </div>
+
 
 
 
 <br><br>
 
 
+<div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <video id="lootboxopening" width="1080" height="960"'>
+					<source src="loot/babblejoevid.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+	</video>
+  </div>
 
-
+</div>
 
 
 
 </html>
-
-
-
-<script>
-document.title = "Lootbox Simulator";
-var money = 2500;
-var happiness = 100;
-var hunger = 100;
-var energy = 100;
-var dailywage = 256;
-var daylength = 24;
-var waketime = 8;
-var playenergy = 10;
-var workenergy = 10;
-var worktimeout = 5; //in seconds
-var workhunger = 20;
-var workhappiness = 10;
-const typing = document.getElementById('typing');
-document.getElementById('soundtrack').loop = true;
-var soundtrack = document.getElementById('soundtrack');
-
-refresh();
-	
-	
-	
-
-
-function refresh(){
-	document.getElementById('happiness').innerHTML = happiness;
-	document.getElementById('money').innerHTML = money + " PHP";
-	document.getElementById('hunger').innerHTML = hunger;
-	document.getElementById('energy').innerHTML = energy;
-	
-}
-
-
-function workfunc(){
-
-	money = money + dailywage;
-	document.getElementById('workbutton').disabled = true;
-	typing.play();
-	setTimeout(
-		function(){
-		document.getElementById('workbutton').disabled = false;
-		typing.pause()
-	}, worktimeout * 1000);
-	hunger = hunger - workhunger
-	energy = energy - workenergy;
-	happiness = happiness - workhappiness;
-	refresh();
-	
-}
-
-function cookfunc(){
-	document.getElementById('cookbutton').disabled = true
-	setTimeout(
-		function(){
-		document.getElementById('cookbutton').disabled = false;
-	}, worktimeout * 1000);
-	refresh();
-	
-}
-
+<script src="script.js">
 </script>
